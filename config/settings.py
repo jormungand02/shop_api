@@ -33,25 +33,29 @@ AUTH_USER_MODEL = 'account.User'
 
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
 
-    #libs
+ADDITIONAL_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
     'drf_yasg',
+]
 
-    #apps
+OWN_APPS = [
     'account',
     'product',
+    'order',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + ADDITIONAL_APPS + OWN_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,9 +125,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
@@ -136,7 +140,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-MEDIA_URL = 'product_img'
+MEDIA_URL = 'product_img/'
 MEDIA_ROOT = BASE_DIR / 'product_img'
 
 # Default primary key field type

@@ -12,7 +12,7 @@ class RegisterView(APIView):
     @swagger_auto_schema(request_body=RegisterSerializer)
     def post(self, request):
         data = request.data
-        serializer = RegisterSerializer(data)
+        serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
         return Response('Вы успешно зарегистрировались!')

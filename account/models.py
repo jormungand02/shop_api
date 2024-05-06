@@ -29,6 +29,10 @@ class UserManager(BaseUserManager):
     
 
 class User(AbstractUser):
+    class Meta:
+        verbose_name = 'Пользователя'
+        verbose_name_plural = 'Ползователи'
+
     username = None
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=False)
