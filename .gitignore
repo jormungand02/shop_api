@@ -1,6 +1,7 @@
 venv
 .env
 products_img/
+.gitignore
 
 # Byte-compiled / optimized / DLL files
 pycache/
