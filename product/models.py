@@ -5,6 +5,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
+        
     title = models.CharField(max_length=30, unique=True, verbose_name='Название')
     slug = models.SlugField(max_length=30, primary_key=True, blank=True)
 
@@ -21,7 +22,6 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
-
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name='Категория')
     title = models.CharField(max_length=50, unique=True, verbose_name='Название')
@@ -44,5 +44,6 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
+
     image = models.ImageField(upload_to='products_img/')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
