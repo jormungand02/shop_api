@@ -98,7 +98,7 @@ DATABASES = {
         'USER': config("DB_USER"),
         'PASSWORD': config("DB_PASSWORD"),
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': '5432'
     }
 }
 
@@ -179,3 +179,8 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+
+# В settings.py добавьте переменные 
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
