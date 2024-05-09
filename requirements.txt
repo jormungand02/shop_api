@@ -6,3 +6,4 @@ pillow
 django-filter
 drf-yasg
 python-slugify
+celery
