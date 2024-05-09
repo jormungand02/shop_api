@@ -47,6 +47,7 @@ ADDITIONAL_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'drf_yasg',
+    'corsheaders'
 ]
 
 OWN_APPS = [
@@ -60,6 +61,7 @@ INSTALLED_APPS = DJANGO_APPS + ADDITIONAL_APPS + OWN_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -182,3 +184,14 @@ SWAGGER_SETTINGS = {
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+] 
+
+# Работают только GET и POST
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST'
+]
